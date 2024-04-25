@@ -49,12 +49,13 @@ class ChallengeTag extends StatelessWidget {
               topRight: Radius.circular(radius),
             ),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
           child: RotatedBox(
             quarterTurns: axis == TagAxis.down ? -turns : 0,
             child: RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
-                text: "Part of ",
+                text: "Part of\n",
                 style: TextStyle(
                   color: frontColor,
                   fontSize: size,
@@ -62,7 +63,7 @@ class ChallengeTag extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                    text: "#100Days100Apps ",
+                    text: "#100Days100Apps\n",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: accent,
