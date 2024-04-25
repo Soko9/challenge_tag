@@ -15,6 +15,7 @@ class ChallengeTag extends StatelessWidget {
   final Alignment alignment;
   final double radius;
   final double size;
+  final String font;
 
   const ChallengeTag({
     super.key,
@@ -25,6 +26,7 @@ class ChallengeTag extends StatelessWidget {
     this.alignment = Alignment.bottomCenter,
     this.radius = 8.0,
     this.size = 18.0,
+    this.font = "monospace",
   });
 
   @override
@@ -57,7 +59,7 @@ class ChallengeTag extends StatelessWidget {
               text: TextSpan(
                 text: "Part of\n",
                 style: TextStyle(
-                  fontFamily: DefaultTextStyle.of(context).style.fontFamily,
+                  fontFamily: font,
                   color: frontColor,
                   fontSize: size,
                   fontWeight: FontWeight.w300,
