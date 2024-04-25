@@ -10,17 +10,21 @@ enum TagAxis {
 class ChallengeTag extends StatelessWidget {
   final Color backColor;
   final Color frontColor;
+  final Color accent;
   final TagAxis axis;
   final Alignment alignment;
   final double radius;
+  final double size;
 
   const ChallengeTag({
     super.key,
-    required this.backColor,
-    required this.frontColor,
+    this.backColor = Colors.black,
+    this.frontColor = Colors.white,
+    this.accent = Colors.red,
     this.axis = TagAxis.up,
     this.alignment = Alignment.bottomCenter,
     this.radius = 8.0,
+    this.size = 18.0,
   });
 
   @override
@@ -48,12 +52,26 @@ class ChallengeTag extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
           child: RotatedBox(
             quarterTurns: axis == TagAxis.down ? -turns : 0,
-            child: Text(
-              "Challenge Tag",
-              style: TextStyle(
-                color: frontColor,
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+            child: RichText(
+              text: TextSpan(
+                text: "Part of ",
+                style: TextStyle(
+                  color: frontColor,
+                  fontSize: size,
+                  fontWeight: FontWeight.w300,
+                ),
+                children: [
+                  TextSpan(
+                    text: "#100Days100Apps ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: accent,
+                    ),
+                  ),
+                  const TextSpan(
+                    text: "Challenge",
+                  ),
+                ],
               ),
             ),
           ),
