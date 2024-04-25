@@ -57,6 +57,7 @@ class ChallengeTag extends StatelessWidget {
               text: TextSpan(
                 text: "Part of\n",
                 style: TextStyle(
+                  fontFamily: DefaultTextStyle.of(context).style.fontFamily,
                   color: frontColor,
                   fontSize: size,
                   fontWeight: FontWeight.w300,
