@@ -26,7 +26,7 @@ class ChallengeTag extends StatelessWidget {
     this.alignment = Alignment.bottomCenter,
     this.radius = 8.0,
     this.size = 18.0,
-    this.font = "monospace",
+    this.font = "Russo",
   });
 
   @override
